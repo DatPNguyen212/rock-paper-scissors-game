@@ -1,0 +1,130 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #ddd;
+  --player-choice-container-height: 120px;
+  --result-history-container-height: calc(
+    100vh - (var(--player-choice-container-height))
+  );
+  --height-player-computer-label: 3rem;
+  --height-player-computer-history-container: calc(
+    100vh - var(--player-choice-container-height) -
+      var(--height-player-computer-label)
+  );
+  --player-choice-emoji-size: 60px;
+  --history-emoji-size: 40px;
+  --gap-player-choice: 50px;
+  --gap-player-computer-history: 200px;
+  --font-size-player-computer-label: 2rem;
+  --gap-playerLabel-playerWin: 0.5rem;
+  --gap-computerLabel-computerWin: var(--gap-playerLabel-playerWin);
+  --emoji-history-opacity: 0.5;
+
+  --choice-hover-scale-duration: 0.3s;
+  --choice-hover-scale-value: 1.5;
+}
+
+body {
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 100vh;
+}
+
+.player-choice-container {
+  height: var(--player-choice-container-height);
+  font-size: var(--player-choice-emoji-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-player-choice);
+}
+
+.result-history-container {
+  width: 100vw;
+  height: var(--result-history-container-height);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  gap: var(--gap-player-computer-history);
+}
+
+.player-label,
+.computer-label,
+.player-win-count,
+.computer-win-count {
+  font-size: var(--font-size-player-computer-label);
+}
+
+.player-label-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-playerLabel-playerWin);
+  height: var(--height-player-computer-label);
+}
+.computer-label-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-computerLabel-computerWin);
+  height: var(--height-player-computer-label);
+}
+
+.player-history-master-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.computer-history-master-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-history-container,
+.computer-history-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: var(--height-player-computer-history-container);
+}
+
+.history {
+  font-size: var(--history-emoji-size);
+  opacity: var(--emoji-history-opacity);
+}
+
+.player-choice-container .choice {
+  transform: scale(1);
+  transition: transform var(--choice-hover-scale-duration) ease;
+}
+
+.player-choice-container .choice:hover {
+  transform: scale(var(--choice-hover-scale-value));
+}
+
+@media screen and (min-width: 760px) {
+  :root {
+    --gap-player-computer-history: 400px;
+  }
+}
+
+.win-history {
+  --history-emoji-size: 60px;
+  --emoji-history-opacity: 1;
+}
