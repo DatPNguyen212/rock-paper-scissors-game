@@ -51,6 +51,10 @@ body {
   gap: var(--gap-player-choice);
 }
 
+.choice {
+  cursor: pointer;
+}
+
 .result-history-container {
   width: 100vw;
   height: var(--result-history-container-height);
@@ -59,6 +63,7 @@ body {
   justify-content: center;
   align-items: start;
   gap: var(--gap-player-computer-history);
+  cursor: default;
 }
 
 .player-label,
