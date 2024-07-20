@@ -21,6 +21,9 @@ playerChoices.forEach((choice) => {
     const computerPick = arrayComputerChoices[Math.floor(Math.random() * 3)]
     let isPlayerWin = false
 
+    playerWinCount.classList.remove('new-win-count')
+    computerWinCount.classList.remove('new-win-count')
+
     if (playerPick === computerPick) {
       console.log('It is a tie!')
       generateTieHistory(playerPick, computerPick)
@@ -113,9 +116,11 @@ function generateWinHistory(playerPick, computerPick, isPlayerWin) {
   if (isPlayerWin) {
     playerHistoryItem.classList.add('win-history')
     playerWinCount.textContent = parseInt(playerWinCount.textContent) + 1
+    playerWinCount.classList.add('new-win-count')
   } else {
     computerHistoryItem.classList.add('win-history')
     computerWinCount.textContent = parseInt(computerWinCount.textContent) + 1
+    computerWinCount.classList.add('new-win-count')
   }
 }
 

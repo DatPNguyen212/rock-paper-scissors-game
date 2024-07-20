@@ -138,3 +138,9 @@ body {
   --history-emoji-size: 60px;
   --emoji-history-opacity: 1;
 }
+
+.new-win-count {
+  color: red;
+  font-size: 3rem;
+  transition: all 0.2s ease;
+}
