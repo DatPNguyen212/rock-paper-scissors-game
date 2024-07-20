@@ -17,13 +17,13 @@
     100vh - var(--player-choice-container-height) -
       var(--height-player-computer-label)
   );
-  --history-item-height: 80px;
+  --history-item-height: 100px;
   --history-item-width: 80px;
   --player-choice-emoji-size: 60px;
   --history-emoji-size: 40px;
   --gap-player-choice: 50px;
   --gap-player-computer-history: 200px;
-  --gap-history-content: 40px;
+  --gap-history-content: 10px;
   --font-size-player-computer-label: 2rem;
   --gap-playerLabel-playerWin: 0.5rem;
   --gap-computerLabel-computerWin: var(--gap-playerLabel-playerWin);
@@ -104,11 +104,12 @@ body {
   flex-direction: column;
   gap: var(--gap-history-content);
   align-items: center;
-  height: var(--height-player-computer-history-container);
+  min-height: var(--height-player-computer-history-container);
   flex-wrap: nowrap;
 }
 
-.history {
+.player-history,
+.computer-history {
   font-size: var(--history-emoji-size);
   opacity: var(--emoji-history-opacity);
   display: flex;
